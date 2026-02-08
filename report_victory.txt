@@ -1,0 +1,184 @@
+app\crear-plantilla\page.tsx:673:23 parse ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Expected corresponding JSX closing tag for 'li'.
+  
+    671 │                   <ul className="grid gap-2">
+    672 │                     {sections.map((section) => (
+  > 673 │                       <li
+        │                       ^^^
+  > 674 │                         className={`flex cursor-move items-center gap-4 rounded-xl border p-4 transition-all ${
+         ...
+  > 683 │                         onDragStart={() => handleSectionDragStart(section.id)}
+  > 684 │                       >
+        │                       ^
+    685 │                         <GripVertical className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
+    686 │                         <div className="flex-1">
+  
+  i Opening tag
+  
+    671 │                   <ul className="grid gap-2">
+    672 │                     {sections.map((section) => (
+  > 673 │                       <li
+        │                       ^^^
+  > 674 │                         className={`flex cursor-move items-center gap-4 rounded-xl border p-4 transition-all ${
+         ...
+  > 683 │                         onDragStart={() => handleSectionDragStart(section.id)}
+  > 684 │                       >
+        │                       ^
+    685 │                         <GripVertical className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
+    686 │                         <div className="flex-1">
+  
+  i closing tag
+  
+    709 │                           </p>
+    710 │                         </div>
+  > 711 │                       </div>
+        │                       ^^^^^^
+    712 │                     ))}
+    713 │                   </div>
+  
+
+app\crear-plantilla\page.tsx:671:19 parse ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Expected corresponding JSX closing tag for 'ul'.
+  
+    669 │                   </h3>
+    670 │ 
+  > 671 │                   <ul className="grid gap-2">
+        │                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    672 │                     {sections.map((section) => (
+    673 │                       <li
+  
+  i Opening tag
+  
+    669 │                   </h3>
+    670 │ 
+  > 671 │                   <ul className="grid gap-2">
+        │                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    672 │                     {sections.map((section) => (
+    673 │                       <li
+  
+  i closing tag
+  
+    711 │                       </div>
+    712 │                     ))}
+  > 713 │                   </div>
+        │                   ^^^^^^
+    714 │                 </div>
+    715 │               </div>
+  
+
+app\crear-plantilla\page.tsx:427:19 lint/a11y/noStaticElementInteractions ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Static Elements should not be interactive.
+  
+    426 │                   {/* biome-ignore lint/a11y/noNoninteractiveElementInteractions: Drag and drop region is appropriate here */}
+  > 427 │                   <div
+        │                   ^^^^
+  > 428 │                     className={`relative rounded-xl border-2 border-dashed p-8 transition-all ${
+         ...
+  > 436 │                     onDrop={handleLogoDrop}
+  > 437 │                   >
+        │                   ^
+    438 │                     <label className="cursor-pointer">
+    439 │                       <input
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+app\crear-plantilla\page.tsx:673:23 lint/a11y/noNoninteractiveElementInteractions ━━━━━━━━━━━━━━━━━━
+
+  × Non-interactive element should not have event handler.
+  
+    671 │                   <ul className="grid gap-2">
+    672 │                     {sections.map((section) => (
+  > 673 │                       <li
+        │                       ^^^
+  > 674 │                         className={`flex cursor-move items-center gap-4 rounded-xl border p-4 transition-all ${
+         ...
+  > 683 │                         onDragStart={() => handleSectionDragStart(section.id)}
+  > 684 │                       >
+        │                       ^
+    685 │                         <GripVertical className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
+    686 │                         <div className="flex-1">
+  
+  i Consider replace semantically interactive element like <button/> or <a href/>.
+  
+
+app\crear-plantilla\page.tsx:673:23 parse ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Expected corresponding JSX closing tag for 'li'.
+  
+    671 │                   <ul className="grid gap-2">
+    672 │                     {sections.map((section) => (
+  > 673 │                       <li
+        │                       ^^^
+  > 674 │                         className={`flex cursor-move items-center gap-4 rounded-xl border p-4 transition-all ${
+         ...
+  > 683 │                         onDragStart={() => handleSectionDragStart(section.id)}
+  > 684 │                       >
+        │                       ^
+    685 │                         <GripVertical className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
+    686 │                         <div className="flex-1">
+  
+  i Opening tag
+  
+    671 │                   <ul className="grid gap-2">
+    672 │                     {sections.map((section) => (
+  > 673 │                       <li
+        │                       ^^^
+  > 674 │                         className={`flex cursor-move items-center gap-4 rounded-xl border p-4 transition-all ${
+         ...
+  > 683 │                         onDragStart={() => handleSectionDragStart(section.id)}
+  > 684 │                       >
+        │                       ^
+    685 │                         <GripVertical className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
+    686 │                         <div className="flex-1">
+  
+  i closing tag
+  
+    709 │                           </p>
+    710 │                         </div>
+  > 711 │                       </div>
+        │                       ^^^^^^
+    712 │                     ))}
+    713 │                   </div>
+  
+
+app\crear-plantilla\page.tsx:671:19 parse ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Expected corresponding JSX closing tag for 'ul'.
+  
+    669 │                   </h3>
+    670 │ 
+  > 671 │                   <ul className="grid gap-2">
+        │                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    672 │                     {sections.map((section) => (
+    673 │                       <li
+  
+  i Opening tag
+  
+    669 │                   </h3>
+    670 │ 
+  > 671 │                   <ul className="grid gap-2">
+        │                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    672 │                     {sections.map((section) => (
+    673 │                       <li
+  
+  i closing tag
+  
+    711 │                       </div>
+    712 │                     ))}
+  > 713 │                   </div>
+        │                   ^^^^^^
+    714 │                 </div>
+    715 │               </div>
+  
+
+Checked 45 files in 252ms. No fixes applied.
+Found 6 errors.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while applying fixes.
+  
+

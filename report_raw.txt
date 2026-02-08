@@ -1,0 +1,730 @@
+app\crear-plantilla\page.tsx:427:19 lint/a11y/useAriaPropsSupportedByRole ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × The ARIA attribute 'aria-label' is not supported by this element.
+  
+    426 │                   {/* biome-ignore lint/a11y/noNoninteractiveElementInteractions: Drag and drop region is appropriate here */}
+  > 427 │                   <div
+        │                   ^^^^
+  > 428 │                     aria-label="Zona de carga de logo"
+         ...
+  > 443 │                     tabIndex={0}
+  > 444 │                   >
+        │                   ^
+    445 │                     <label className="cursor-pointer">
+    446 │                     <input
+  
+  i Ensure that ARIA attributes are valid for the role of the element.
+  
+
+app\crear-plantilla\page.tsx:427:19 lint/a11y/noStaticElementInteractions ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Static Elements should not be interactive.
+  
+    426 │                   {/* biome-ignore lint/a11y/noNoninteractiveElementInteractions: Drag and drop region is appropriate here */}
+  > 427 │                   <div
+        │                   ^^^^
+  > 428 │                     aria-label="Zona de carga de logo"
+         ...
+  > 443 │                     tabIndex={0}
+  > 444 │                   >
+        │                   ^
+    445 │                     <label className="cursor-pointer">
+    446 │                     <input
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+app\crear-plantilla\page.tsx:443:21 lint/a11y/noNoninteractiveTabindex  FIXABLE  ━━━━━━━━━━━━━━━━━━━
+
+  × The HTML element div is non-interactive. Do not use tabIndex.
+  
+    441 │                       }
+    442 │                     }}
+  > 443 │                     tabIndex={0}
+        │                     ^^^^^^^^^^^^
+    444 │                   >
+    445 │                     <label className="cursor-pointer">
+  
+  i Adding non-interactive elements to the keyboard navigation flow can confuse users.
+  
+  i Unsafe fix: Remove the tabIndex attribute.
+  
+    441 441 │                         }
+    442 442 │                       }}
+    443     │ - ····················tabIndex={0}
+    444 443 │                     >
+    445 444 │                       <label className="cursor-pointer">
+  
+
+app\crear-plantilla\page.tsx:680:23 lint/a11y/noNoninteractiveElementInteractions ━━━━━━━━━━━━━━━━━━
+
+  × Non-interactive element should not have event handler.
+  
+    678 │                   <div className="grid gap-2">
+    679 │                     {sections.map((section) => (
+  > 680 │                       <div
+        │                       ^^^^
+  > 681 │                         className={`flex cursor-move items-center gap-4 rounded-xl border p-4 transition-all ${
+         ...
+  > 690 │                         onDragStart={() => handleSectionDragStart(section.id)}
+  > 691 │                       >
+        │                       ^
+    692 │                         <GripVertical className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
+    693 │                         <div className="flex-1">
+  
+  i Consider replace semantically interactive element like <button/> or <a href/>.
+  
+
+app\crear-plantilla\page.tsx:680:23 lint/a11y/noStaticElementInteractions ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Static Elements should not be interactive.
+  
+    678 │                   <div className="grid gap-2">
+    679 │                     {sections.map((section) => (
+  > 680 │                       <div
+        │                       ^^^^
+  > 681 │                         className={`flex cursor-move items-center gap-4 rounded-xl border p-4 transition-all ${
+         ...
+  > 690 │                         onDragStart={() => handleSectionDragStart(section.id)}
+  > 691 │                       >
+        │                       ^
+    692 │                         <GripVertical className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
+    693 │                         <div className="flex-1">
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+app\crear-plantilla\page.tsx:249:7 lint/suspicious/noAlert ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Unexpected alert
+  
+    247 │     } catch (error) {
+    248 │       console.error("Error generating PDF:", error);
+  > 249 │       alert("Error al generar el PDF.");
+        │       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    250 │     } finally {
+    251 │       setIsGeneratingPDF(false);
+  
+  i The alert function is considered to be obtrusive. Replace it with a custom UI implementation.
+  
+
+app\crear-plantilla\page.tsx format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+    444 444 │                     >
+    445 445 │                       <label className="cursor-pointer">
+    446     │ - ····················<input
+    447     │ - ······················accept="image/*"
+    448     │ - ······················className="hidden"
+    449     │ - ······················onChange={handleLogoUpload}
+    450     │ - ······················ref={fileInputRef}
+    451     │ - ······················type="file"
+    452     │ - ····················/>
+    453     │ - ····················{logo·?·(
+    454     │ - ······················<div·className="flex·items-center·gap-5">
+    455     │ - ························<div·className="relative·h-24·w-24">
+    456     │ - ··························<Image
+    457     │ - ····························alt="Logo·de·la·empresa"
+    458     │ - ····························className="rounded-xl·bg-white·object-contain·p-2·shadow-sm"
+    459     │ - ····························fill
+    460     │ - ····························src={
+    461     │ - ······························logo·||
+    462     │ - ······························"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+    463     │ - ····························}
+    464     │ - ··························/>
+    465     │ - ························</div>
+    466     │ - ························<div·className="flex-1">
+    467     │ - ··························<p·className="font-bold·text-foreground·text-sm">
+    468     │ - ····························Logo·cargado
+    469     │ - ··························</p>
+    470     │ - ··························<p·className="text-muted-foreground·text-xs">
+    471     │ - ····························Suéltalo·aquí·para·reemplazarlo
+    472     │ - ··························</p>
+    473     │ - ························</div>
+    474     │ - ························<button
+    475     │ - ··························className="flex·h-10·w-10·items-center·justify-center·rounded-full·bg-red-50·text-red-500·transition-colors·hover:bg-red-100"
+    476     │ - ··························onClick={(e)·=>·{
+    477     │ - ····························e.preventDefault();
+    478     │ - ····························setLogo(null);
+    479     │ - ··························}}
+    480     │ - ··························type="button"
+    481     │ - ························>
+    482     │ - ··························<Trash2·className="h-4·w-4"·/>
+    483     │ - ························</button>
+    484     │ - ······················</div>
+    485     │ - ····················)·:·(
+    486     │ - ······················<div·className="text-center">
+    487     │ - ························<div·className="mx-auto·mb-4·flex·h-12·w-12·items-center·justify-center·rounded-full·bg-muted">
+    488     │ - ··························<Upload·className="h-6·w-6·text-muted-foreground"·/>
+    489     │ - ························</div>
+    490     │ - ························<p·className="mb-1·font-semibold·text-foreground·text-sm">
+    491     │ - ··························Elige·tu·mejor·logo
+    492     │ - ························</p>
+    493     │ - ························<p·className="mb-4·text-muted-foreground·text-xs">
+    494     │ - ··························PNG,·JPG·o·SVG·(máximo·2MB)
+    495     │ - ························</p>
+    496     │ - ························<div·className="inline-block·rounded-xl·bg-primary·px-6·py-2.5·font-bold·text-sm·text-white·shadow-md·transition-all·hover:translate-y-[-1px]">
+    497     │ - ··························Cargar·Archivo
+    498     │ - ························</div>
+    499     │ - ······················</div>
+    500     │ - ····················)}
+        446 │ + ······················<input
+        447 │ + ························accept="image/*"
+        448 │ + ························className="hidden"
+        449 │ + ························onChange={handleLogoUpload}
+        450 │ + ························ref={fileInputRef}
+        451 │ + ························type="file"
+        452 │ + ······················/>
+        453 │ + ······················{logo·?·(
+        454 │ + ························<div·className="flex·items-center·gap-5">
+        455 │ + ··························<div·className="relative·h-24·w-24">
+        456 │ + ····························<Image
+        457 │ + ······························alt="Logo·de·la·empresa"
+        458 │ + ······························className="rounded-xl·bg-white·object-contain·p-2·shadow-sm"
+        459 │ + ······························fill
+        460 │ + ······························src={
+        461 │ + ································logo·||
+        462 │ + ································"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        463 │ + ······························}
+        464 │ + ····························/>
+        465 │ + ··························</div>
+        466 │ + ··························<div·className="flex-1">
+        467 │ + ····························<p·className="font-bold·text-foreground·text-sm">
+        468 │ + ······························Logo·cargado
+        469 │ + ····························</p>
+        470 │ + ····························<p·className="text-muted-foreground·text-xs">
+        471 │ + ······························Suéltalo·aquí·para·reemplazarlo
+        472 │ + ····························</p>
+        473 │ + ··························</div>
+        474 │ + ··························<button
+        475 │ + ····························className="flex·h-10·w-10·items-center·justify-center·rounded-full·bg-red-50·text-red-500·transition-colors·hover:bg-red-100"
+        476 │ + ····························onClick={(e)·=>·{
+        477 │ + ······························e.preventDefault();
+        478 │ + ······························setLogo(null);
+        479 │ + ····························}}
+        480 │ + ····························type="button"
+        481 │ + ··························>
+        482 │ + ····························<Trash2·className="h-4·w-4"·/>
+        483 │ + ··························</button>
+        484 │ + ························</div>
+        485 │ + ······················)·:·(
+        486 │ + ························<div·className="text-center">
+        487 │ + ··························<div·className="mx-auto·mb-4·flex·h-12·w-12·items-center·justify-center·rounded-full·bg-muted">
+        488 │ + ····························<Upload·className="h-6·w-6·text-muted-foreground"·/>
+        489 │ + ··························</div>
+        490 │ + ··························<p·className="mb-1·font-semibold·text-foreground·text-sm">
+        491 │ + ····························Elige·tu·mejor·logo
+        492 │ + ··························</p>
+        493 │ + ··························<p·className="mb-4·text-muted-foreground·text-xs">
+        494 │ + ····························PNG,·JPG·o·SVG·(máximo·2MB)
+        495 │ + ··························</p>
+        496 │ + ··························<div·className="inline-block·rounded-xl·bg-primary·px-6·py-2.5·font-bold·text-sm·text-white·shadow-md·transition-all·hover:translate-y-[-1px]">
+        497 │ + ····························Cargar·Archivo
+        498 │ + ··························</div>
+        499 │ + ························</div>
+        500 │ + ······················)}
+    501 501 │                       </label>
+    502 502 │                     </div>
+  
+
+app\dashboard\page.tsx:210:17 lint/complexity/noUselessFragments  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × This fragment is unnecessary.
+  
+    208 │                 </div>
+    209 │               ) : (
+  > 210 │                 <>
+        │                 ^^
+  > 211 │                   {filteredInvoices.length > 0 ? (
+         ...
+  > 317 │                   )}
+  > 318 │                 </>
+        │                 ^^^
+    319 │               )}
+    320 │             </div>
+  
+  i A fragment is redundant if it contains only one child, or if it is the child of a html element, and is not a keyed fragment.
+  
+  i Unsafe fix: Remove the Fragment
+  
+    208 208 │                   </div>
+    209 209 │                 ) : (
+    210     │ - ················<>
+    211     │ - ··················{filteredInvoices.length·>·0·?·(
+        210 │ + ················filteredInvoices.length·>·0·?·(
+    212 211 │                       <div className="overflow-x-auto">
+    213 212 │                         <table className="w-full border-collapse text-left">
+    ······· │ 
+    315 314 │                         )}
+    316 315 │                       </div>
+    317     │ - ··················)}
+    318     │ - ················</>
+        316 │ + ··················)
+    319 317 │                 )}
+    320 318 │               </div>
+  
+
+app\dashboard\page.tsx:96:7 lint/suspicious/noAlert ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Unexpected alert
+  
+    94 │     } catch (error) {
+    95 │       console.error("Download failed:", error);
+  > 96 │       alert("Error al descargar la factura.");
+       │       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    97 │     } finally {
+    98 │       setDownloadingId(null);
+  
+  i The alert function is considered to be obtrusive. Replace it with a custom UI implementation.
+  
+
+app\perfil\page.tsx:48:3 lint/style/useBlockStatements  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Block statements are preferred in this position.
+  
+    46 │   };
+    47 │ 
+  > 48 │   if (!user) return null;
+       │   ^^^^^^^^^^^^^^^^^^^^^^^
+    49 │ 
+    50 │   return (
+  
+  i Unsafe fix: Wrap the statement with a `JsBlockStatement`
+  
+    48 │ ··if·(!user)·{·return·null;·}
+       │              ++            ++
+
+app\perfil\page.tsx:118:17 lint/a11y/noLabelWithoutControl ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × A form label must be associated with an input.
+  
+    117 │               <div>
+  > 118 │                 <label className="mb-2 block font-black text-muted-foreground text-xs uppercase tracking-widest">
+        │                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 119 │                   Correo Electrónico
+  > 120 │                 </label>
+        │                 ^^^^^^^^
+    121 │                 <div className="relative">
+    122 │                   <Mail className="absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+  
+  i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label element.
+  
+
+app\perfil\page.tsx:144:23 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Do not nest ternary expressions.
+  
+    142 │                   {isLoading ? (
+    143 │                     <Loader2 className="h-5 w-5 animate-spin" />
+  > 144 │                   ) : isSaved ? (
+        │                       ^^^^^^^^^^^
+  > 145 │                     <Check className="h-5 w-5" />
+  > 146 │                   ) : (
+  > 147 │                     <Save className="h-5 w-5" />
+  > 148 │                   )}
+        │                   ^
+    149 │                   {isSaved ? "GUARDADO" : "GUARDAR CAMBIOS"}
+    150 │                 </button>
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+app\plantillas\page.tsx:654:11 lint/a11y/noNoninteractiveElementInteractions ━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Non-interactive element should not have event handler.
+  
+    652 │       {previewModal && (
+    653 │         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+  > 654 │           <div
+        │           ^^^^
+  > 655 │             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+  > 656 │             onClick={() => setPreviewModal(null)}
+  > 657 │           />
+        │           ^^
+    658 │           <div className="relative max-h-[90vh] w-full max-w-md overflow-auto rounded-2xl border border-border bg-card shadow-2xl">
+    659 │             {/* Modal Header */}
+  
+  i Consider replace semantically interactive element like <button/> or <a href/>.
+  
+
+app\plantillas\page.tsx:654:11 lint/a11y/useKeyWithClickEvents ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
+  
+    652 │       {previewModal && (
+    653 │         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+  > 654 │           <div
+        │           ^^^^
+  > 655 │             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+  > 656 │             onClick={() => setPreviewModal(null)}
+  > 657 │           />
+        │           ^^
+    658 │           <div className="relative max-h-[90vh] w-full max-w-md overflow-auto rounded-2xl border border-border bg-card shadow-2xl">
+    659 │             {/* Modal Header */}
+  
+  i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.
+  
+
+app\plantillas\page.tsx:654:11 lint/a11y/noStaticElementInteractions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Static Elements should not be interactive.
+  
+    652 │       {previewModal && (
+    653 │         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+  > 654 │           <div
+        │           ^^^^
+  > 655 │             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+  > 656 │             onClick={() => setPreviewModal(null)}
+  > 657 │           />
+        │           ^^
+    658 │           <div className="relative max-h-[90vh] w-full max-w-md overflow-auto rounded-2xl border border-border bg-card shadow-2xl">
+    659 │             {/* Modal Header */}
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+app\registro\page.tsx:33:5 lint/style/useBlockStatements  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Block statements are preferred in this position.
+  
+    31 │   const formatRTN = (value: string) => {
+    32 │     const digits = value.replace(/\D/g, "").slice(0, 14);
+  > 33 │     if (digits.length <= 4) return digits;
+       │     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    34 │     if (digits.length <= 8) return `${digits.slice(0, 4)}-${digits.slice(4)}`;
+    35 │     return `${digits.slice(0, 4)}-${digits.slice(4, 8)}-${digits.slice(8)}`;
+  
+  i Unsafe fix: Wrap the statement with a `JsBlockStatement`
+  
+    33 │ ····if·(digits.length·<=·4)·{·return·digits;·}
+       │                             ++              ++
+
+app\registro\page.tsx:34:5 lint/style/useBlockStatements  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Block statements are preferred in this position.
+  
+    32 │     const digits = value.replace(/\D/g, "").slice(0, 14);
+    33 │     if (digits.length <= 4) return digits;
+  > 34 │     if (digits.length <= 8) return `${digits.slice(0, 4)}-${digits.slice(4)}`;
+       │     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    35 │     return `${digits.slice(0, 4)}-${digits.slice(4, 8)}-${digits.slice(8)}`;
+    36 │   };
+  
+  i Unsafe fix: Wrap the statement with a `JsBlockStatement`
+  
+    34 │ ····if·(digits.length·<=·8)·{·return·`${digits.slice(0,·4)}-${digits.slice(4)}`;·}
+       │                             ++                                                  ++
+
+components\ColorPicker.tsx:14:3 lint/style/useBlockStatements  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Block statements are preferred in this position.
+  
+    12 │ function hexToHSL(hex: string): { h: number; s: number; l: number } | null {
+    13 │   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  > 14 │   if (!result) return null;
+       │   ^^^^^^^^^^^^^^^^^^^^^^^^^
+    15 │ 
+    16 │   const r = Number.parseInt(result[1], 16) / 255;
+  
+  i Unsafe fix: Wrap the statement with a `JsBlockStatement`
+  
+    14 │ ··if·(!result)·{·return·null;·}
+       │                ++            ++
+
+components\ColorPicker.tsx:13:18 lint/performance/useTopLevelRegex ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × This regex literal is not defined in the top level scope. This can lead to performance issues if this function is called frequently.
+  
+    11 │ // Convert hex to HSL
+    12 │ function hexToHSL(hex: string): { h: number; s: number; l: number } | null {
+  > 13 │   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+       │                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    14 │   if (!result) return null;
+    15 │ 
+  
+  i Move the regex literal outside of this scope, and place it at the top level of this module, as a constant.
+  
+
+components\ColorPicker.tsx:29:5 lint/style/useDefaultSwitchClause ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Expected a default switch clause.
+  
+    27 │     const d = max - min;
+    28 │     s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+  > 29 │     switch (max) {
+       │     ^^^^^^^^^^^^^^
+  > 30 │       case r:
+        ...
+  > 38 │         break;
+  > 39 │     }
+       │     ^
+    40 │   }
+    41 │ 
+  
+  i The lack of a default clause can be a possible omission.
+  
+  i Consider adding a default clause.
+  
+
+components\ColorPicker.tsx:83:7 lint/style/useBlockStatements  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Block statements are preferred in this position.
+  
+    81 │   const updateFromGradient = useCallback(
+    82 │     (e: React.MouseEvent | MouseEvent) => {
+  > 83 │       if (!gradientRef.current) return;
+       │       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    84 │       const rect = gradientRef.current.getBoundingClientRect();
+    85 │       const x = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+  
+  i Unsafe fix: Wrap the statement with a `JsBlockStatement`
+  
+    83 │ ······if·(!gradientRef.current)·{·return;·}
+       │                                 ++       ++
+
+components\ColorPicker.tsx:104:7 lint/style/useBlockStatements  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Block statements are preferred in this position.
+  
+    102 │   const updateFromHue = useCallback(
+    103 │     (e: React.MouseEvent | MouseEvent) => {
+  > 104 │       if (!hueRef.current) return;
+        │       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    105 │       const rect = hueRef.current.getBoundingClientRect();
+    106 │       const x = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+  
+  i Unsafe fix: Wrap the statement with a `JsBlockStatement`
+  
+    104 │ ······if·(!hueRef.current)·{·return;·}
+        │                            ++       ++
+
+components\ColorPicker.tsx:143:9 lint/performance/useTopLevelRegex ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × This regex literal is not defined in the top level scope. This can lead to performance issues if this function is called frequently.
+  
+    141 │   const handleHexChange = (value: string) => {
+    142 │     setHexInput(value);
+  > 143 │     if (/^#[0-9A-Fa-f]{6}$/.test(value)) {
+        │         ^^^^^^^^^^^^^^^^^^^
+    144 │       const parsed = hexToHSL(value);
+    145 │       if (parsed) {
+  
+  i Move the regex literal outside of this scope, and place it at the top level of this module, as a constant.
+  
+
+components\ColorPicker.tsx:161:7 lint/a11y/noStaticElementInteractions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Static Elements should not be interactive.
+  
+    159 │     <div className="absolute bottom-full left-0 z-50 mb-2 w-64 rounded-xl border border-border bg-card p-4 shadow-2xl">
+    160 │       {/* Gradient area */}
+  > 161 │       <div
+        │       ^^^^
+  > 162 │         className="relative mb-3 h-36 w-full cursor-crosshair overflow-hidden rounded-lg"
+         ...
+  > 174 │         }}
+  > 175 │       >
+        │       ^
+    176 │         {/* Picker circle */}
+    177 │         <div
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+components\ColorPicker.tsx:188:7 lint/a11y/noStaticElementInteractions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Static Elements should not be interactive.
+  
+    187 │       {/* Hue slider */}
+  > 188 │       <div
+        │       ^^^^
+  > 189 │         className="relative mb-4 h-4 w-full cursor-pointer rounded-full"
+         ...
+  > 206 │         }}
+  > 207 │       >
+        │       ^
+    208 │         <div
+    209 │           className="pointer-events-none absolute h-4 w-4 -translate-x-1/2 -translate-y-0 rounded-full border-2 border-gray-300 bg-white shadow-md"
+  
+  i To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+components\ColorPicker.tsx lint/style/useFilenamingConvention ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × The filename should be in kebab-case.
+  
+  i The filename could be renamed to one of the following names:
+    color-picker.tsx
+  
+
+components\Footer.tsx lint/style/useFilenamingConvention ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × The filename should be in kebab-case.
+  
+  i The filename could be renamed to one of the following names:
+    footer.tsx
+  
+
+components\HeroSection.tsx:45:5 lint/style/useBlockStatements  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Block statements are preferred in this position.
+  
+    44 │   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  > 45 │     if (!containerRef.current) return;
+       │     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    46 │     const rect = containerRef.current.getBoundingClientRect();
+    47 │     setMousePos({
+  
+  i Unsafe fix: Wrap the statement with a `JsBlockStatement`
+  
+    45 │ ····if·(!containerRef.current)·{·return;·}
+       │                                ++       ++
+
+components\HeroSection.tsx lint/style/useFilenamingConvention ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × The filename should be in kebab-case.
+  
+  i The filename could be renamed to one of the following names:
+    hero-section.tsx
+  
+
+components\InvoiceTypesSection.tsx lint/style/useFilenamingConvention ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × The filename should be in kebab-case.
+  
+  i The filename could be renamed to one of the following names:
+    invoice-types-section.tsx
+  
+
+components\ModernInvoice.tsx lint/style/useFilenamingConvention ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × The filename should be in kebab-case.
+  
+  i The filename could be renamed to one of the following names:
+    modern-invoice.tsx
+  
+
+components\Navbar.tsx:31:5 lint/style/useBlockStatements  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Block statements are preferred in this position.
+  
+    29 │     // Check session
+    30 │     const savedUser = localStorage.getItem("factura_pro_user");
+  > 31 │     if (savedUser) setUser(JSON.parse(savedUser));
+       │     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    32 │ 
+    33 │     window.addEventListener("scroll", handleScroll);
+  
+  i Unsafe fix: Wrap the statement with a `JsBlockStatement`
+  
+    31 │ ····if·(savedUser)·{·setUser(JSON.parse(savedUser));·}
+       │                    ++                               ++
+
+components\Navbar.tsx lint/style/useFilenamingConvention ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × The filename should be in kebab-case.
+  
+  i The filename could be renamed to one of the following names:
+    navbar.tsx
+  
+
+components\OldInvoice.tsx lint/style/useFilenamingConvention ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × The filename should be in kebab-case.
+  
+  i The filename could be renamed to one of the following names:
+    old-invoice.tsx
+  
+
+components\RegistrationSection.tsx:32:5 lint/style/useBlockStatements  FIXABLE  ━━━━━━━━━━━━━━━━━━━━
+
+  × Block statements are preferred in this position.
+  
+    30 │   const formatRTN = (value: string) => {
+    31 │     const digits = value.replace(/\D/g, "").slice(0, 14);
+  > 32 │     if (digits.length <= 4) return digits;
+       │     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    33 │     if (digits.length <= 8) return `${digits.slice(0, 4)}-${digits.slice(4)}`;
+    34 │     return `${digits.slice(0, 4)}-${digits.slice(4, 8)}-${digits.slice(8)}`;
+  
+  i Unsafe fix: Wrap the statement with a `JsBlockStatement`
+  
+    32 │ ····if·(digits.length·<=·4)·{·return·digits;·}
+       │                             ++              ++
+
+components\RegistrationSection.tsx:33:5 lint/style/useBlockStatements  FIXABLE  ━━━━━━━━━━━━━━━━━━━━
+
+  × Block statements are preferred in this position.
+  
+    31 │     const digits = value.replace(/\D/g, "").slice(0, 14);
+    32 │     if (digits.length <= 4) return digits;
+  > 33 │     if (digits.length <= 8) return `${digits.slice(0, 4)}-${digits.slice(4)}`;
+       │     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    34 │     return `${digits.slice(0, 4)}-${digits.slice(4, 8)}-${digits.slice(8)}`;
+    35 │   };
+  
+  i Unsafe fix: Wrap the statement with a `JsBlockStatement`
+  
+    33 │ ····if·(digits.length·<=·8)·{·return·`${digits.slice(0,·4)}-${digits.slice(4)}`;·}
+       │                             ++                                                  ++
+
+components\RegistrationSection.tsx lint/style/useFilenamingConvention ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × The filename should be in kebab-case.
+  
+  i The filename could be renamed to one of the following names:
+    registration-section.tsx
+  
+
+components\ScrollReveal.tsx lint/style/useFilenamingConvention ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × The filename should be in kebab-case.
+  
+  i The filename could be renamed to one of the following names:
+    scroll-reveal.tsx
+  
+
+components\ThemeToggle.tsx lint/style/useFilenamingConvention ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × The filename should be in kebab-case.
+  
+  i The filename could be renamed to one of the following names:
+    theme-toggle.tsx
+  
+
+drizzle.config.ts:8:10 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Forbidden non-null assertion.
+  
+     6 │   dialect: "postgresql",
+     7 │   dbCredentials: {
+   > 8 │     url: process.env.DATABASE_URL!,
+       │          ^^^^^^^^^^^^^^^^^^^^^^^^^
+     9 │   },
+    10 │ });
+  
+
+lib\db\index.ts:3:8 lint/performance/noNamespaceImport ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Avoid namespace imports, it can prevent efficient tree shaking and increase bundle size.
+  
+    1 │ import { drizzle } from "drizzle-orm/postgres-js";
+    2 │ import postgres from "postgres";
+  > 3 │ import * as schema from "./schema";
+      │        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    4 │ 
+    5 │ const connectionString = process.env.DATABASE_URL;
+  
+  i Use named imports instead.
+  
+
+Checked 45 files in 113ms. No fixes applied.
+Found 41 errors.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+

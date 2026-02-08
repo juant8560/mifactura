@@ -1,0 +1,41 @@
+app\crear-plantilla\page.tsx:438:21 lint/a11y/useSemanticElements ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × The elements with this role can be changed to the following elements:
+    <section>
+  
+    436 │                     }}
+    437 │                     onDrop={handleLogoDrop}
+  > 438 │                     role="region"
+        │                     ^^^^^^^^^^^^^
+    439 │                   >
+    440 │                     <label className="cursor-pointer">
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+
+app\crear-plantilla\page.tsx:675:23 lint/a11y/noNoninteractiveElementInteractions ━━━━━━━━━━━━━━━━━━
+
+  × Non-interactive element should not have event handler.
+  
+    673 │                   <ul className="grid gap-2">
+    674 │                     {sections.map((section) => (
+  > 675 │                       <li
+        │                       ^^^
+  > 676 │                         className={`flex cursor-move items-center gap-4 rounded-xl border p-4 transition-all ${
+         ...
+  > 685 │                         onDragStart={() => handleSectionDragStart(section.id)}
+  > 686 │                       >
+        │                       ^
+    687 │                         <GripVertical className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
+    688 │                         <div className="flex-1">
+  
+  i Consider replace semantically interactive element like <button/> or <a href/>.
+  
+
+Checked 45 files in 142ms. No fixes applied.
+Found 2 errors.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+
